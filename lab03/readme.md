@@ -82,6 +82,13 @@ Could not find employee 987987
 
 **Layered architecture view (UML diagram)**
 ![Diagram](diagram.png)
+**Employee Controller** -> manipulation of data; maps the link between HTTP Requests and Repository methods that handle the requests
+**Employee Repository** -> has the neccessary methods to support working with a data-store (in this case, JPA Repository; we can create, read, update and delete records)
+**Employee** -> represents an employee (a record in our data-store)
+**EmployeeNotFoundAdvice** -> When someone tries to use a record that doesn't exist, a page is displayed with some advice
+**EmployeeNotFoundException** -> When someone tries to use a record that doesn't exist, exception is thrown
+**LoadDatabase** -> In our case, it automatically creates two records and inserts them in our Repostiory
+**PayrollApplication** -> The application itself; it does all the binding needed (with the @SpringBootApplication annotation)
 
 ---
 #
