@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- Basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- Mobile Metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- Site Metas -->
+      <title>aLIVE - Medical Care Software</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- Site Icons -->
+      <link rel="shortcut icon" href="images/fevicon.ico.png" type="image/x-icon" />
+      <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <!-- Site CSS -->
+      <link rel="stylesheet" href="style.css">
+      <!-- Colors CSS -->
+      <link rel="stylesheet" href="css/colors.css">
+      <!-- ALL VERSION CSS -->
+      <link rel="stylesheet" href="css/versions.css">
+      <!-- Responsive CSS -->
+      <link rel="stylesheet" href="css/responsive.css">
+      <!-- Custom CSS -->
+      <link rel="stylesheet" href="css/custom.css">
+      <!-- Modernizer for Portfolio -->
+      <script src="js/modernizer.js"></script>
+      <!-- [if lt IE 9] -->
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+   </head>
+   <body class="clinic_version">
+      <!-- LOADER -->
+      <div id="preloader">
+         <img class="preloader" src="images/loaders/heart-loading2.gif" alt="">
+      </div>
+      <!-- END LOADER -->
+      <!-- HEADER -->
+      <header>
+         <div class="header-top wow fadeIn">
+            <div class="container">
+               <img src="images/cover.png" alt="image" style="width: 15%;">
+            </div>
+         </div>
+         <div class="header-bottom wow fadeIn">
+            <div class="container">
+               <nav class="main-menu">
+                  <div class="navbar-header">
+                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i class="fa fa-bars" aria-hidden="true"></i></button>
+                  </div>
+				  
+                  <div id="navbar" class="navbar-collapse collapse">
+                     <ul class="nav navbar-nav">
+                        <li><a class="active" href="index.html">Home</a></li>
+                        <li><a data-scroll href="#getintouch">Contact</a></li>
+                     </ul>
+                  </div>
+               </nav>
+            </div>
+         </div>
+      </header>
+      <!-- END HEADER -->
+      <hr><hr>
+      <!-- LOGIN DIV -->
+      <div id="home" class="services wow fadeIn">
+         <br><br><br><br>
+         <div class="container">
+            <div class="row">
+               <!-- LOGIN-->
+               <div class=".col-6 .col-md-4" style="width:50%; float: left">
+               <section class="left-section">
+                    <div id="left-cover" style="display: block;">
+                    <div class="appointment-form2">
+                        <div class="center">
+                            <input type="button" value="REGISTER PROFESSIONAL" name="loginButton" id="registerButtom" class="switch-btn" onclick="switchSignupAssistente()">
+                        </div>
+                    </div>
+                    </div>
+                    <div id="left-form" class="form fade-in-element" style="display: none;">  
+                        <div class="appointment-form">
+                            <br>
+                            <h3>REGISTER PROFESSIONAL</h3>
+                            <div class="form">
+                                <form action="login.html">
+                                <fieldset>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="row">
+                                            <div class="form-group">
+                                             <input type="name" name="regName" id="regName" value="" placeholder="Full Name">
+                                             <input type="name" name="regUsername" id="regUsername" value="" placeholder="Username">
+                                             <input type="email" name="regEmail" id="regEmail" value="" placeholder="Email">
+                                             <div class ="container-fluid">
+                                                <div class ="row">
+                                                   <div class ="col-md-6 col-sm-6">
+                                                      <input type="age" name="registerAge" id="regAge" value="" placeholder="Age">
+                                                   </div>
+                                                   <div class ="col-md-6 col-sm-6">
+                                                         
+                                                         <select name="gender" id="regGender">
+                                                            <option value="Male">Male</option>
+                                                            <option value="Female">Female</option>
+                                                         </select>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                             <input type="workplace" name="regWorkplace" id="regWorkplace" value="" placeholder="Type the Workplace">
+                                             <input type="speciality" name="regSpeciality" id="regSpeciality" value="" placeholder="Type your speciality">
+                                             <input type="password" name="regPass" id="regPass" value="" placeholder="Type a Password">
+                                             <input type="password" name="regPass2" id="regPass2" value="" placeholder="Repeat Password">
+                                            <div class="center">
+                                                <input type="button" value="REGISTER" name="resButton" id="registerProfessional">
+                                            </div>
+                                            <p class="text-danger mt-5 mb-0 d-none" id="registerErrorPro"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                </div>
+               <!-- FINAL LOGIN-->
+               <div class=".col-6 .col-md-4" style="width:50%; float: right;">
+               <section class="right-section">
+                    <div id="right-cover" style="display: block;">
+                        <div class="appointment-form2">
+                            <div class="center">
+                                <input type="button" value="REGISTER PATIENT" name="loginButton" id="registerButtom"  class="switch-btn" onclick="switchSignupPaciente()">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="right-form" class="form form-hide" style="display: none;"> 
+                        <div class="appointment-form" >
+                        <br>
+                        <h3>REGISTER PATIENT</h3>
+                        <div class="form">
+                            <form action="login.html">
+                                <fieldset>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <input type="name" name="registerName" id="registerName" value="" placeholder="Full Name">
+                                            <input type="name" name="regUsername" id="registerUsername" value="" placeholder="Username">
+                                            <input type="email" name="registerEmail" id="registerEmail" value="" placeholder="Email">
+                                             <div class ="container-fluid">
+                                                <div class ="row">
+                                                   <div class ="col-md-6 col-sm-6">
+                                                      <input type="age" name="registerAge" id="registerAge" value="" placeholder="Age">
+                                                   </div>
+                                                   <div class ="col-md-6 col-sm-6">
+                                                         
+                                                         <select name="gender" id="registerGender">
+                                                            <option value="Male">Male</option>
+                                                            <option value="Female">Female</option>
+                                                         </select>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                             <div class ="container-fluid">
+                                                <div class ="row">
+                                                   <div class ="col-md-6 col-sm-6">
+                                                      <input type="weight" name="registerWeight" id="registerWeight" value="" placeholder="Weight">
+                                                   </div>
+                                                   <div class ="col-md-6 col-sm-6">
+                                                      <input type="height" name="registerHeight" id="registerHeight" value="" placeholder="Height">
+                                                   </div>
+                                                </div>
+                                             </div>
+                                             <div>
+                                             <input type="prof" name="registerProf" id="registerProf" value="" placeholder="Type Assistent email">
+                                             <input type="password" name="registerPass" id="registerPass" value="" placeholder="Type a Password">
+                                            <input type="password" name="registerPass2" id="registerPass2" value="" placeholder="Repeat Password">
+                                          </div>
+                                            <div class="center">
+                                                <input type="button" value="REGISTER" name="resButton2" id="registerPatient">
+                                            </div>
+                                            <p class="text-danger mt-5 mb-0 d-none" id="registerErrorPat"></p>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            
+            </div>
+            <div style="width: 40%; margin:0 auto; padding: 50px;">
+                     <input type="button" value="Already have an account?" name="loginButton" id="toLoginButton"  class="switch-btn" onclick="location.href='index.html'">
+                </div>
+         </div>
+         <br>
+      </div>
+      <!-- end section -->
+
+      <!-- FOOTER-->
+      <footer id="footer" class="footer-area wow fadeIn">
+         <div class="container" id="getintouch">
+            <div class="row">
+               <div class="col-md-4">
+                  <div class="logo padding">
+                     <a href=""><img src="images/cover.png" alt=""></a>
+                     <p>Keeping you closer to your doctor, in a simple way</p>
+                  </div>
+               </div>
+               <div class="col-md-8">
+                  <div class="footer-info padding">
+                     <h3>OUR TEAM</h3>
+                     <p><i class="fa fa-paper-plane" aria-hidden="true"></i> João Carvalho - 89059, joao.carvalho19@ua.pt</p>
+                     <p><i class="fa fa-paper-plane" aria-hidden="true"></i> Rui Fernandes - 92952, rfmf@ua.pt</p>
+                     <p><i class="fa fa-paper-plane" aria-hidden="true"></i> Francisca Barros - 93102, francisca.mbarros@ua.pt</p>
+                     <p><i class="fa fa-paper-plane" aria-hidden="true"></i> Pedro Bastos - 93150, pedro.bas@ua.pt</p>
+                     <p><i class="fa fa-paper-plane" aria-hidden="true"></i> Margarida Martins - 93169, margarida.martins@ua.pt</p>
+                  </div>
+               </div>
+               <div class="col-md-2">
+               </div>
+            </div>
+         </div>
+      </footer>
+      <!-- COPYRIGHTS -->
+      <div class="copyright-area wow fadeIn">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-8">
+                  <div class="footer-text">
+                     <p>© 2021. Developed by G-25</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end copyrights -->
+      <a href="#home" data-scroll class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
+      <!-- all js files -->
+      <script src="js/all.js"></script>
+      <!-- all plugins -->
+      <script src="js/custom.js"></script>
+      <!-- LOGIN JS -->
+     <script src="viewmodel/js/login.js"></script>
+     <script src="viewmodel/js/login_register.js"></script>
+   </body>
+</html>

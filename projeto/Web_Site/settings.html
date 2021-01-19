@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- Basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- Mobile Metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- Site Metas -->
+      <title>aLIVE - Medical Care Software</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- Site Icons -->
+      <link rel="shortcut icon" href="images/fevicon.ico.png" type="image/x-icon" />
+      <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <!-- Site CSS -->
+      <link rel="stylesheet" href="style.css">
+      <!-- Colors CSS -->
+      <link rel="stylesheet" href="css/colors.css">
+      <!-- ALL VERSION CSS -->
+      <link rel="stylesheet" href="css/versions.css">
+      <!-- Responsive CSS -->
+      <link rel="stylesheet" href="css/responsive.css">
+      <!-- Custom CSS -->
+      <link rel="stylesheet" href="css/custom.css">
+      <!-- SETTINGS CSS -->
+      <link rel="stylesheet" href="viewmodel/css/settings.css">
+      <!-- Websockets -->
+      <script src="viewmodel/js/sockjs-0.3.4.js"></script>
+      <script src="viewmodel/js/stomp.js"></script>
+      <!-- Modernizer for Portfolio -->
+      <script src="js/modernizer.js"></script>
+      <!-- [if lt IE 9] -->
+   </head>
+   <body class="clinic_version">
+      <!-- LOADER -->
+      <div id="preloader">
+         <img class="preloader" src="images/loaders/heart-loading2.gif" alt="">
+      </div>
+      <!-- END LOADER -->
+      <!-- HEADER -->
+      <header>
+         <div class="header-top wow fadeIn">
+            <div class="container">
+               <img src="images/cover.png" alt="image" style="width: 15%;">
+            </div>
+         </div>
+         <div class="header-bottom wow fadeIn">
+            <div class="container">
+               <nav class="main-menu">
+                  <div class="navbar-header">
+                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i class="fa fa-bars" aria-hidden="true"></i></button>
+                  </div>
+				  
+                  <div id="navbar" class="navbar-collapse collapse">
+                     <ul class="nav navbar-nav">
+                        <li><a id="cstatus" href="utente.html">Clinic Status</a></li>
+                        <li><a class="active" href="settings.html">Settings</a></li>
+                        <li><a data-scroll href="#getintouch">Contact</a></li>
+                        <li><a href="#" id="logOut">Log Out</a></li>
+                     </ul>
+                  </div>
+               </nav>
+            </div>
+         </div>
+      </header>
+      <!-- END HEADER -->
+      <hr><hr>
+      <br>
+      <!-- SETTINGS DIV -->
+      <div id="settings" class="section wow fadeIn">
+         <div class="container">
+            <div class="card-body">
+            <div class="heading">
+               <h2>Settings</h2>
+            </div>
+            <!-- end title -->
+            <!-- ACCOUNT -->
+            <div class="row">
+               <div class="col-12 col-lg-4 mb-3">
+                  <h2 class="settings-header">Account</h2>
+                  <h3>IDENTIFICATION</h3>
+                  <p></p>
+                  <img id="profilePic" width="60%">
+                  <p></p>
+                  <b>Name: </b>
+                  <em id ="userFullName"></em>
+                  <p></p>
+                  <b>Username: </b>
+						<em id="userId"></em>
+                  <p></p>
+                  <b>Email: </b>
+                  <em id="userEmail"></em>
+                  <br><br>
+               </div>
+               <div class="col-12 col-lg-8">
+                  <br><br><br>
+                  <p></p>
+                  <div class="alignitems" style="margin-bottom: 30px;">
+                     <input type="button" value="Change Username" name="changeUsername" id="changeUsername"  class="switch-btn">
+                  </div>
+                  <div id="changeUser">
+                     <input type="text" name="demo-name" id="usernameSet" value="" placeholder="Change Username">
+                  </div>
+                  <br>
+                  <div class="alignitems" style="margin-bottom: 30px;">
+                     <input type="button" value="Change Email" name="changeEmail" id="changeEmail"  class="switch-btn">
+                  </div>
+                  <div id="changeEma">
+						   <input type="text" name="demo-name" id="emailSet" value="" placeholder="Change Email">
+                  </div>
+                  <br>
+                  <div class="alignitems" style="margin-bottom: 30px;">
+                     <input type="button" value="Change Password" name="changePassword" id="changePassword"  class="switch-btn">
+                  </div>
+                  <div id="changePass">
+                     <input type="password" name="demo-name" id="passSet" value="" placeholder="New Password">
+                     <input type="password" name="demo-name" id="passSet2" value="" placeholder="Repeat New Password">
+                  </div>
+                  <div id="changeFoto" class="alignitems">
+                     <input type="file" name="demo-name" id="fileSet">
+                     <button class="btn btn-primary" onclick="changePhoto();">Submit Photo</button>
+                  </div>
+                  <br>
+                  <br>
+                  <p class="text-danger mt-5 mb-0 d-none" id="setError"></p>
+                  <div class="alignitems" style="margin-bottom: 30px;">
+                     <button type="button" id="saveSettings" style="background-color: #1d86df;color: white;">Save</button>
+                  </div>
+               </div>
+            </div>
+            <!-- END ACCOUNT -->
+         </div>
+      </div>
+            
+      <!-- END SETTINGS-->
+
+      <!-- FOOTER-->
+      <footer id="footer" class="footer-area wow fadeIn">
+         <div class="container" id="getintouch">
+            <div class="row">
+               <div class="col-md-4">
+                  <div class="logo padding">
+                     <a href=""><img src="images/cover.png" alt=""></a>
+                     <p>Keeping you closer to your doctor, in a simple way</p>
+                  </div>
+               </div>
+               <div class="col-md-8">
+                  <div class="footer-info padding">
+                     <h3>OUR TEAM</h3>
+                     <p><i class="fa fa-paper-plane" aria-hidden="true"></i> João Carvalho - 89059, joao.carvalho19@ua.pt</p>
+                     <p><i class="fa fa-paper-plane" aria-hidden="true"></i> Rui Fernandes - 92952, rfmf@ua.pt</p>
+                     <p><i class="fa fa-paper-plane" aria-hidden="true"></i> Francisca Barros - 93102, francisca.mbarros@ua.pt</p>
+                     <p><i class="fa fa-paper-plane" aria-hidden="true"></i> Pedro Bastos - 93150, pedro.bas@ua.pt</p>
+                     <p><i class="fa fa-paper-plane" aria-hidden="true"></i> Margarida Martins - 93169, margarida.martins@ua.pt</p>
+                  </div>
+               </div>
+               <div class="col-md-2">
+               </div>
+            </div>
+         </div>
+      </footer>
+      <!-- COPYRIGHTS -->
+      <div class="copyright-area wow fadeIn">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-8">
+                  <div class="footer-text">
+                     <p>© 2021. Developed by G-25</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end copyrights -->
+      <a href="#settings" data-scroll class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
+      <!-- all js files -->
+      <script src="js/all.js"></script>
+      <!-- all plugins -->
+      <script src="js/custom.js"></script>
+      <!-- SETTINGS JS -->
+     <script src="viewmodel/js/settings.js"></script>
+   </body>
+</html>

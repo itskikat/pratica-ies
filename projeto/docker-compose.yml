@@ -1,0 +1,74 @@
+version: "3.3"
+services:
+  db:
+    image: mysql:5.7
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: demo
+      MYSQL_USER: demo
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: password
+    volumes:
+      - db-data:/var/lib/mysql
+  rabbit:
+    image: 'rabbitmq:3.6-management-alpine'
+    ports:
+      # The standard AMQP protocol port
+      - '5672:5672'
+      # HTTP management UI
+      - '15672:15672'
+    environment:
+      # The location of the RabbitMQ server.  "amqp" is the protocol;
+      # "rabbitmq" is the hostname.  Note that there is not a guarantee
+      # that the server will start first!  Telling the pika client library
+      # to try multiple times gets around this ordering issue.
+      AMQP_URL: 'amqp://rabbitmq?connection_attempts=5&retry_delay=5'
+      RABBITMQ_DEFAULT_USER: "guest"
+      RABBITMQ_DEFAULT_PASS: "guest"
+  backend:
+    build:
+      context: Web_Server
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+      - rabbit
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/demo
+      SPRING_DATASOURCE_USERNAME: demo
+      SPRING_DATASOURCE_PASSWORD: password
+      SPRING_RABBITMQ_HOST: rabbit
+    restart: on-failure
+  sensing:
+    build:
+      context: sensing
+      dockerfile: Dockerfile
+    depends_on:
+      - db
+      - rabbit
+      - backend
+    environment:
+      RABBITMQ_IP: rabbit
+      SERVER_IP: backend
+    restart: on-failure
+
+  client:   
+    build:
+      context: Web_Site
+      dockerfile: Dockerfile
+    ports: 
+      - '80:80'
+    depends_on:
+      - db
+      - rabbit
+      - backend
+      - sensing
+    volumes: 
+      - ./src:/etc/share/nginx/html
+    environment:
+      SERVER_IP: backend
+    
+volumes:
+  db-data:

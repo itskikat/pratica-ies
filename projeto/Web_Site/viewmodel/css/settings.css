@@ -1,0 +1,219 @@
+/* START FORM */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    border-bottom: solid 1px #1d86df;
+    color: inherit;
+    display: block;
+    outline: 0;
+    padding: 0;
+    text-decoration: none;
+    width: 100%;
+}
+
+    input[type="text"]:invalid,
+    input[type="password"]:invalid,
+    input[type="email"]:invalid,
+    input[type="tel"]:invalid,
+    select:invalid,
+    textarea:invalid {
+        box-shadow: none;
+    }
+
+    input[type="text"]:focus,
+    input[type="password"]:focus,
+    input[type="email"]:focus,
+    input[type="tel"]:focus,
+    select:focus,
+    textarea:focus {
+        border-bottom-color: #1d86df;
+        box-shadow: inset 0 -1px 0 0 #1d86df;
+    }
+
+select {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' preserveAspectRatio='none' viewBox='0 0 40 40'%3E%3Cpath d='M9.4,12.3l10.4,10.4l10.4-10.4c0.2-0.2,0.5-0.4,0.9-0.4c0.3,0,0.6,0.1,0.9,0.4l3.3,3.3c0.2,0.2,0.4,0.5,0.4,0.9 c0,0.4-0.1,0.6-0.4,0.9L20.7,31.9c-0.2,0.2-0.5,0.4-0.9,0.4c-0.3,0-0.6-0.1-0.9-0.4L4.3,17.3c-0.2-0.2-0.4-0.5-0.4-0.9 c0-0.4,0.1-0.6,0.4-0.9l3.3-3.3c0.2-0.2,0.5-0.4,0.9-0.4S9.1,12.1,9.4,12.3z' fill='%23c9c9c9' /%3E%3C/svg%3E");
+    background-size: 1.25rem;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 1rem) center;
+    height: 3em;
+    padding-right: 3em;
+    text-overflow: ellipsis;
+}
+
+    select option {
+        background: #ffffff;
+    }
+
+    select:focus::-ms-value {
+        background-color: transparent;
+    }
+
+    select::-ms-expand {
+        display: none;
+    }
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select {
+    height: 3em;
+}
+
+textarea {
+    padding: 0;
+    min-height: 3.75em;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    display: block;
+    float: left;
+    margin-right: -2em;
+    opacity: 0;
+    width: 1em;
+    z-index: -1;
+}
+
+    input[type="checkbox"] + label,
+    input[type="radio"] + label {
+        text-decoration: none;
+        color: #585858;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 1.2em;
+        font-weight: 300;
+        padding-left: 2.55em;
+        padding-right: 0.75em;
+        padding-bottom: 1em;
+        position: relative;
+    }
+
+    input[type="checkbox"] + label:before,
+    input[type="radio"] + label:before {
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        display: inline-block;
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        line-height: 1;
+        text-transform: none !important;
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+    }
+
+    input[type="checkbox"] + label:before,
+    input[type="radio"] + label:before {
+        border-radius: 4px;
+        border: solid 1px #c9c9c9;
+        content: '';
+        display: inline-block;
+        font-size: 0.8em;
+        height: 2.5em;
+        left: 0;
+        line-height: 2.5em;
+        position: absolute;
+        text-align: center;
+        top: 0;
+        width: 2.5em;
+    }
+
+    input[type="checkbox"]:checked + label:before,
+    input[type="radio"]:checked + label:before {
+        background: #585858;
+        border-color: #585858;
+        color: #ffffff;
+        content: '\f00c';
+    }
+
+    input[type="checkbox"]:focus + label:before,
+    input[type="radio"]:focus + label:before {
+        border-color: #1d86df;
+        box-shadow: 0 0 0 1px #1d86df;
+    }
+
+input[type="checkbox"] + label:before {
+    border-radius: 4px;
+}
+
+input[type="radio"] + label:before {
+    border-radius: 100%;
+}
+/* END FORM */
+
+/* START DIVS */
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+    position: relative;
+    min-height: 1px;
+    padding-left: 35px;
+    padding-right: 15px;
+}
+
+.heading h2 {
+    font-size: 50px;
+    text-transform: none;
+    font-weight: 400;
+    letter-spacing: -1px;
+    color: #333;
+    margin: 5px 0;
+    padding: 0;
+    position: relative;
+}
+
+.settings-header {
+    font-size: 30px;
+    text-transform: none;
+    color: #333;
+    margin: 10px 0;
+    position: relative;
+}
+
+/* Button */
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button,
+.button {
+    appearance: none;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    border-radius: 4px;
+    border: 0;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 0.8em;
+    font-weight: 900;
+    height: 3.5em;
+    letter-spacing: 0.35em;
+    line-height: 3.45em;
+    overflow: hidden;
+    padding: 0 1.25em 0 1.6em;
+    text-align: center;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+input[type="submit"].primary,
+input[type="reset"].primary,
+input[type="button"].primary,
+button.primary,
+.button.primary {
+    box-shadow: none;
+    background-color: #585858;
+    color: #ffffff !important;
+}

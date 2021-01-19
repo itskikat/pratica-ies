@@ -1,0 +1,167 @@
+[
+    {
+        "id": "P01",
+        "email": "user@teste.pt",
+        "password": "teste",
+        "username": "johndoe123",
+        "full_name": "John Doe",
+        "age": 35,
+        "genre": "M",
+        "weight": 75,
+        "height": 1.80,
+        "type": "Patient",
+        "health_data": {
+            "conditions": ["Asthma", "Cholesterol", "Diabetes"],
+            "medication": ["Sample Medicine 1", "Sample Medicine 2"],
+            "heart_rate": [
+                { 
+                    "when": "2020-05-31T19:00:00",
+                    "value": 75
+                },
+                { 
+                    "when": "2020-06-02T19:00:00",
+                    "value": 80
+                },
+                { 
+                    "when": "2020-06-05T19:00:00",
+                    "value": 72
+                }
+            ],
+            "blood_pressure": [
+                {
+                    "when": "2020-05-31T19:00:00",
+                    "value_diast": 82,
+                    "value_sys": 130
+                },
+                {
+                    "when": "2020-06-02T19:00:00",
+                    "value_diast": 70,
+                    "value_sys": 110
+                },
+                {
+                    "when": "2020-06-05T19:00:00",
+                    "value_diast": 95,
+                    "value_sys": 135
+                }
+            ],
+            "body_temperature": [
+                {
+                    "when": "2020-05-31T19:00:00",
+                    "value": 37.4
+                },
+                {
+                    "when": "2020-06-02T19:00:00",
+                    "value": 38.2
+                },
+                {
+                    "when": "2020-06-05T19:00:00",
+                    "value": 36.7
+                }
+            ],
+            "blood_glucose": [
+                {
+                    "when": "2020-05-31T19:00:00",
+                    "value": 80
+                }, 
+                {
+                    "when": "2020-06-02T19:00:00",
+                    "value": 110
+                },
+                {
+                    "when": "2020-06-05T19:00:00",
+                    "value": 72
+                }
+            ]
+        }, 
+        "doctorID": "M01",
+        "lastcheck": "2020-06-05T19:00:00",
+        "currentstate": 1
+    },
+    {
+        "id": "P02",
+        "email": "user2@teste.pt",
+        "password": "teste",
+        "username": "janedoe123",
+        "full_name": "Jane Doe",
+        "age": 25,
+        "genre": "F",
+        "weight": 90,
+        "height": 1.50,
+        "type": "Patient",
+        "health_data": {
+            "conditions": ["Cholesterol", "Diabetes"],
+            "medication": ["Sample Medicine 1", "Sample Medicine 2"],
+            "heart_rate": [
+                { 
+                    "when": "2020-05-31T19:00:00",
+                    "value": 75
+                },
+                { 
+                    "when": "2020-06-02T19:00:00",
+                    "value": 80
+                },
+                { 
+                    "when": "2020-06-05T19:00:00",
+                    "value": 72
+                }
+            ],
+            "blood_pressure": [
+                {
+                    "when": "2020-08-31T19:00:00",
+                    "value_diast": 82,
+                    "value_sys": 130
+                },
+                {
+                    "when": "2020-06-02T19:00:00",
+                    "value_diast": 70,
+                    "value_sys": 110
+                },
+                {
+                    "when": "2020-06-05T19:00:00",
+                    "value_diast": 95,
+                    "value_sys": 135
+                }
+            ],
+            "body_temperature": [
+                {
+                    "when": "2020-05-31T19:00:00",
+                    "value": 37.4
+                },
+                {
+                    "when": "2020-06-02T19:00:00",
+                    "value": 38.2
+                },
+                {
+                    "when": "2020-06-05T19:00:00",
+                    "value": 36.7
+                }
+            ],
+            "blood_glucose": [
+                {
+                    "when": "2020-05-31T19:00:00",
+                    "value": 80
+                }, 
+                {
+                    "when": "2020-06-02T19:00:00",
+                    "value": 110
+                },
+                {
+                    "when": "2020-06-05T19:00:00",
+                    "value": 72
+                }
+            ]
+        }, 
+        "doctorID": "M01",
+        "lastcheck": "2020-08-05T19:00:00",
+        "currentstate": 5
+    },
+    {
+        "id": "M01",
+        "email": "medic@teste.pt",
+        "password": "teste",
+        "username": "medic123",
+        "full_name": "Thomas Wallace",
+        "type": "Medic",
+        "assigned_patients": ["P01", "P02"]
+    }
+]

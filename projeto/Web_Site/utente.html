@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- Basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- Mobile Metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- Site Metas -->
+      <title>aLIVE - Medical Care Software</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- Site Icons -->
+      <link rel="shortcut icon" href="images/fevicon.ico.png" type="image/x-icon" />
+      <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <!-- Site CSS -->
+      <link rel="stylesheet" href="style.css">
+      <!-- Colors CSS -->
+      <link rel="stylesheet" href="css/colors.css">
+      <!-- ALL VERSION CSS -->
+      <link rel="stylesheet" href="css/versions.css">
+      <!-- Responsive CSS -->
+      <link rel="stylesheet" href="css/responsive.css">
+      <!-- Custom CSS -->
+      <link rel="stylesheet" href="css/custom.css">
+      <!-- Modernizer for Portfolio -->
+      <script src="js/modernizer.js"></script>
+      <!-- [if lt IE 9] -->
+      <!-- GOOGLE CHARTS -->
+      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+   </head>
+   <body class="clinic_version">
+      <header>
+         <div class="header-top wow fadeIn">
+            <div class="container">
+               <img src="images/cover.png" alt="image" style="width: 15%;">
+            </div>
+         </div>
+         <div class="header-bottom wow fadeIn">
+            <div class="container">
+               <nav class="main-menu">
+                  <div class="navbar-header">
+                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i class="fa fa-bars" aria-hidden="true"></i></button>
+                  </div>
+            
+                  <div id="navbar" class="navbar-collapse collapse">
+                     <ul class="nav navbar-nav">
+                        <li><a class="active" id="cstatus" href="utente.html">Clinical Status</a></li>
+                        <li><a  href="settings.html">Settings</a></li>
+                        <li><a data-scroll href="#getintouch">Contact</a></li>
+                        <li><a href="#" id="logOut">Log Out</a></li>
+                     </ul>
+                  </div>
+               </nav>
+            </div>
+         </div>
+      </header>
+      <br></br>
+      <br></br>
+      <div id="utente" class="section wow fadeIn">
+         <div class="container">
+            <div class="heading">
+               <span class="icon-logo"><img id="logo" src="images/icon-logo.png" alt="#"></span>
+               <h2>Personal Clinical Status</h2>
+               <br>
+            </div>
+            <!-- end title -->
+            <div class="row">
+               <div class="col-12 col-md-8">
+                  <div class="message-box">
+                     <h4>Personal Data</h4>
+                     <br>
+                     <div class="row">
+                        <div class="col-6 col-md-4">
+                           <b>Name: </b>
+                           <em id ="userFullName"></em>
+                        </div>
+                        <div class="col-6 col-md-4">
+                           <b>Age: </b>
+                           <em id="userAge"></em>
+                        </div>
+                        <div class="col-6 col-md-4">
+                           <b>Gender:</b>
+                           <em id="userGender"></em>
+                        </div>
+                     </div>
+                     <div class="row">
+                        <div class="col-6 col-md-4">
+                           <b>Weight: </b>
+                           <em id="userWeight"></em>
+                           <em> kg</em>
+                        </div>
+                        <div class="col-6 col-md-4">
+                           <b>Height: </b>
+                           <em id="userHeight"></em>
+                           <em> m</em>
+                        </div>
+                     </div>
+                     <h1></h1>
+                     <h1></h1>
+                     <div class="row">
+                        <div class="col-md-6">
+                           <p><b>Diseases and Conditions: </b></p>
+                           <ul id="userConditionList"></ul>  
+                        </div>
+                        <div class="col-md-6">
+                           <p><b>Medication: </b></p>
+                           <ul id="userMedicationList"></ul>
+                        </div>
+                     </div>
+                  </div>
+                  <!-- end messagebox -->
+               </div>
+               <!-- end col -->
+               <div class="col-6 col-md-4">
+                  <div class="post-media wow fadeIn" style="height: 50%; width: 50%;">
+                     <img src="" id="userPhoto" alt="" class="img-responsive" > 
+                  </div>
+                  <!-- end media -->
+               </div>
+               <!-- end col -->
+            </div>
+            <!-- end row -->
+
+            <!-- LATEST VALUES -->
+            <hr class="hr1">
+               <div class="alignitems" style="margin-bottom: 30px;">
+                  <input type="button" value="Information from latest measurements" name="latestInfo" id="latestInfo"  class="switch-btn" onclick="">
+               </div>
+            <div id="latestInf">
+               <div class="row"> 
+                  <div class="col-md-4"> <b>Blood Pressure</b>
+                     <p id="latest_bp"></p>
+                  </div>
+
+                  <div class="col-md-4"> <b>Body Temperature</b>
+                     <p id="latest_bt"></p>
+                  </div>
+
+                  <div class="col-md-4"> <b>Heart Rate</b>
+                     <p id="latest_hr"></p>
+                  </div>
+               </div>
+
+               <br>
+               <div class="row"> 
+                  <div  class="col-md-6"> <b>Sugar Level</b>
+                     <p id="latest_sl"></p>
+                  </div>
+                  <div  class="col-md-6"> <b>Oxygen Saturation</b>
+                     <p id="latest_ol"></p>
+                  </div>
+               
+               </div>
+            </div>
+            <hr class="hr1">
+            <!-- CHARTS -->
+            <div class="alignitems" style="margin-bottom: 30px;">
+               <h1>Information from last Month</h1>
+            </div>
+            <div class="row">
+               <div id="heartrate_chart"></div>
+            </div>
+            <div class="row">
+               <div class="col-5 "></div>
+               <div class="col-5 ">
+                  <div class="btn-group btn-group-toggle"  data-toggle="buttons">
+                     <label class="btn btn-secondary active" onclick="draw_HeartRateChart('D')" >
+                        <input type="radio"   name="options" id="option1" autocomplete="off" checked> Past 24 hours
+                     </label>
+                     <label class="btn btn-secondary" onclick="draw_HeartRateChart('W')">
+                        <input type="radio"  name="options" id="option2" autocomplete="off"> Past Week
+                     </label>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <br><br>
+               <div id="bodytemperature_chart"></div>
+                  <div class="btn-group btn-group-toggle"  data-toggle="buttons">
+                     <label class="btn btn-secondary active" onclick="draw_TemperatureChart('W')">
+                     <input type="radio"   name="options1" id="option1" autocomplete="off" checked> Past Week
+                     </label>
+                     <label class="btn btn-secondary" onclick="draw_TemperatureChart('M')">
+                     <input type="radio"  name="options1" id="option2" autocomplete="off"> Past Month
+                     </label>
+                  </div>
+               <br><br>
+               <div id="bloodglucose_chart"></div>
+               <div class="btn-group btn-group-toggle"  data-toggle="buttons">
+                  <label class="btn btn-secondary active" onclick="draw_BloodSugarChart('W')">
+                  <input type="radio"   name="options2" id="option1" autocomplete="off" checked> Past Week
+                  </label>
+                  <label class="btn btn-secondary" onclick="draw_BloodSugarChart('M')">
+                  <input type="radio"  name="options2" id="option2" autocomplete="off"> Past Month
+                  </label>
+               </div>
+               <br><br>
+               <div id="bloodpressure_chart"></div>
+                  <div class="btn-group btn-group-toggle"  data-toggle="buttons">
+                     <label class="btn btn-secondary active" onclick="draw_BloodPressureChart('W')" >
+                        <input type="radio"   name="options3" id="option1" autocomplete="off" checked> Past Week
+                     </label>
+                     <label class="btn btn-secondary" onclick="draw_BloodPressureChart('M')">
+                        <input type="radio"  name="options3" id="option2" autocomplete="off"> Past Month
+                     </label>
+                  </div>
+               <br><br>
+               <div id="oxygensaturation_chart"></div>
+               <div class="btn-group btn-group-toggle"  data-toggle="buttons">
+                  <label class="btn btn-secondary active" onclick="draw_OxygenSaturationChart('D')" >
+                     <input type="radio"   name="options4" id="option1" autocomplete="off" checked> Past 24 hours
+                  </label>
+                  <label class="btn btn-secondary" onclick="draw_OxygenSaturationChart('W')">
+                     <input type="radio"  name="options4" id="option2" autocomplete="off"> Past Week
+                  </label>
+               </div>
+
+            </div>
+            <!-- end row -->
+         
+         <!-- end container -->
+      </div>
+      <!-- END SECTION -->
+
+      <!-- FOOTER-->
+      <footer id="footer" class="footer-area wow fadeIn">
+         <div class="container" id="getintouch">
+            <div class="row">
+               <div class="col-md-4">
+                  <div class="logo padding">
+                     <a href=""><img src="images/cover.png" alt=""></a>
+                     <p>Keeping you closer to your doctor, in a simple way</p>
+                  </div>
+               </div>
+               <div class="col-md-8">
+                  <div class="footer-info padding">
+                     <h3>OUR TEAM</h3>
+                     <p><i class="fa fa-paper-plane" aria-hidden="true"></i> João Carvalho - 89059, joao.carvalho19@ua.pt</p>
+                     <p><i class="fa fa-paper-plane" aria-hidden="true"></i> Rui Fernandes - 92952, rfmf@ua.pt</p>
+                     <p><i class="fa fa-paper-plane" aria-hidden="true"></i> Francisca Barros - 93102, francisca.mbarros@ua.pt</p>
+                     <p><i class="fa fa-paper-plane" aria-hidden="true"></i> Pedro Bastos - 93150, pedro.bas@ua.pt</p>
+                     <p><i class="fa fa-paper-plane" aria-hidden="true"></i> Margarida Martins - 93169, margarida.martins@ua.pt</p>
+                  </div>
+               </div>
+               <div class="col-md-2">
+               </div>
+            </div>
+         </div>
+      </footer>
+      <!-- COPYRIGHTS -->
+      <div class="copyright-area wow fadeIn">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-8">
+                  <div class="footer-text">
+                     <p>© 2021. Developed by G-25</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end copyrights -->
+      <a href="#home" data-scroll class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
+      <!-- all js files -->
+      <script src="js/all.js"></script>
+      <!-- all plugins -->
+      <script src="js/custom.js"></script>
+      <!-- LOGIN JS -->
+     <script src="viewmodel/js/utente.js"></script>
+
+   </body>
+
+</html>

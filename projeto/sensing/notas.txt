@@ -1,0 +1,7 @@
+$ brew install rabbitmq
+
+$ export PATH=$PATH:/usr/local/sbin
+
+$ python -m pip install pika --upgrade
+
+$ brew services start rabbitmq

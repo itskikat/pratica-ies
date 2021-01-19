@@ -1,0 +1,29 @@
+[
+    {
+        "email": "user@teste.pt",
+        "password": "teste",
+        "username": "johndoe123",
+        "name": "John Doe",
+        "health_data": {
+            "heart_rate": [
+                { 
+                    "when": "2020-05-31T19:00:00",
+                    "value": 75
+                }
+            ],
+            "blood_pressure": [
+                {
+                    "when": "2020-05-31T19:00:00",
+                    "value_diast": 82,
+                    "value_sys": 130
+                }
+            ],
+            "body_temperature": [
+                {
+                    "when": "2020-05-31T19:00:00",
+                    "value": 37.4
+                }
+            ]
+        }
+    }
+]
