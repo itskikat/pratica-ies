@@ -141,7 +141,9 @@ To start the application, simply run the command ```./mvnw spring-boot:run```
 
 #### p)
 **RESTful Web Service Controller** populates and returns a Greeting object (rather than relying on a view tecnhology to perform server-side rendering of the greeting data to HTML - ***traditional MVC controller***); object data written directly to the HTTP response as JSON.
+
 **@RestController** -> marks the class as a controller where every method retuns a domain object instead of a view (= ***@Controller + @ResponseBody***)
+
 **Server Port** was changed to 4231, making the application available at (http://localhost:4231/RESTgreeting)
 
 ```zsh
