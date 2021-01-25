@@ -6,7 +6,8 @@
 
 Docker Containers and Servlet Containers are VERY DIFFERENT!
 - **Docker Containers** deploy virtualized runtime containers (any kind of services)
-- **Servlet Containers** (environmentn that runs on the server-side) provide a runtime container to execute server-side, web-related Java code
+- **Servlet Containers** (environment that runs on the server-side) provides a runtime container to execute server-side, web-related Java code
+
 
 ##### a)  
 
@@ -26,8 +27,10 @@ _Manager App_
 - .war packaging, for web (web-archive)
 - Deploy WAR file in server environment
 
+
 ##### b)
 To access the ___Manager App___, one needs to register appropriate roles in ```/Library/Tomcat/conf/tomcat-users.xml ```
+
 Added the following lines
 ```xml
 <role rolename="manager-gui"/>
@@ -35,8 +38,10 @@ Added the following lines
 <user username="admin" password="admin" roles="manager-gui, manager-script"/>
 ```
 
+
 ##### g)
 **server loggs** are saved under ```$ Library/Tomcat/logs/catalina.out```
+
 Loggs showing the deployment was successful
 ```zsh
 20-Oct-2020 09:50:04.346 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           13.0.2+8
@@ -56,8 +61,8 @@ In order to use it, extend the **javax.servlet.http.HttpServlet** class.
 When a user doesn't specify the username to be greeted. The else statement fixes this issue.
 
 **Servlet Container** -> generate dynamic web pages; the essential part of the web server that interacts with the Java Servlets; communicated between client browsers and servlets; basic idea - user java to dynamically generate the web page on the server side (Thus, a servlet container is part of the web server interacting with the servlets)
-via [What is a Servlet Container?](https://dzone.com/articles/what-servlet-container)
-[Servlet Container](https://ecomputernotes.com/servlet/intro/servlet-container)
+
+via [What is a Servlet Container?](https://dzone.com/articles/what-servlet-container) and [Servlet Container](https://ecomputernotes.com/servlet/intro/servlet-container)
 
 
 ##### k)
@@ -83,11 +88,13 @@ $ docker image build -t francisca_barros/lab2.1Tomcat-1.0-SNAPSHOT-image ./
 $ docker container run -it --publish 8088:8080 francisca_barros/lab2.1Tomcat-1.0-SNAPSHOT-image
 ```
 
+
 ---
 #
 ## 2.2 - Server-Side Programming with Embedded Servers
-[What is in embedded server?](https://www.springboottutorial.com/java-programmer-essentials-what-is-an-embedded-server)
+[What is in embedded server?](https://www.springboottutorial.com/java-programmer-essentials-what-is-an-embedded-server) and 
 [Embedded Jetty Server](https://examples.javacodegeeks.com/enterprise-java/jetty/embedded-jetty-server-example/)
+
 An **Embedded Server** will make our life a lot easier. It's embedded as part of the deployable application (in JAVA, this would be a JAR); there's no need to pre-install the server in the deployment environment.
 
 
@@ -97,7 +104,9 @@ An **Embedded Server** will make our life a lot easier. It's embedded as part of
 #
 ## 2.3 - Introduction to Web Apps with Spring Boot
 [Spring-Boot](https://spring.io/projects/spring-boot)
+
 **Spring Boot** is an open source Java-Based framework used to create a micro Service. It makes it easy to create stand-alone, production-grade Spring based applications that one can "just run"
+
 **Main Features**
 - create stand-alone Spring applications
 - embeded tomcat (in this case, since we're using it) -> no need to deploy .WAR
@@ -106,6 +115,7 @@ An **Embedded Server** will make our life a lot easier. It's embedded as part of
 - provide production-ready features (metrics, health checks, externalized configuration...)
 - no code generation and no requirement for XML configuration
 (sounds like fun, and v-easy to get a grip tbh)
+
 
 #### n)
 [Spring Initializr](https://start.spring.io/)
@@ -116,13 +126,18 @@ $ ./mvnw spring-boot:run
 ```
 *it took a while for the first time, some files were downloading, but then it was smooth*
 
+
 #### o)
 **@GetMapping** -> ensures HTTP GET requests to ***/greeting*** are mapped to ***greeting()*** 
+
 **@RequestParam** -> binds the value of the query string parameter ***name*** into the ***name parameter of greeting()*** method. This query string parameter is; value added to a ***Model Object*** (make it accessible to the view template)
+
 ***not required. If absent, the default value of __World__ is used***
 
 To start the application, simply run the command ```./mvnw spring-boot:run```
+
 **Server Port** was changed to my NMEC, making the application available at (http://localhost:93102/greeting)
+
 
 #### p)
 **RESTful Web Service Controller** populates and returns a Greeting object (rather than relying on a view tecnhology to perform server-side rendering of the greeting data to HTML - ***traditional MVC controller***); object data written directly to the HTTP response as JSON.
@@ -169,6 +184,7 @@ To start the application, simply run the command ```./mvnw spring-boot:run```
 
 ---
 [Embedded vs External Web Server](https://stephencoakley.com/2017/07/06/embedded-vs-external-web-server)
+
 **Standalone servers** are independent of domain controllers on the network. They run separately from the application. It's configured with its own configuration files (since all the logic is built into the app), it forwards all requests to the application and it may load it.
 ***PROS***
 - Ease of deployment
@@ -176,10 +192,12 @@ To start the application, simply run the command ```./mvnw spring-boot:run```
 - Better security (chances of breach are a lot smaller)
 - Complete control over the server and code
 - Application/Module errors don't affect each other
+
 ***CONS***
 - Performance overhead
 - Development environment is harder (tons of protocols to learn and many bugs)
 - Complexity (need to mantain the server+app... yikes)
+
 
 **Embedded servers** are embedded as part of the deployable application; (basically, the program ships with the server within); the application is responsible for server start-up and management
 ***PROS***
@@ -187,12 +205,14 @@ To start the application, simply run the command ```./mvnw spring-boot:run```
 - More control over the server's behaviour (filters, headers, cache, ...)
 - Possible to test againts any server version (like any other dependency)
 - More self-contained apps (better to develop :D)
+
 ***CONS***
 - Application designs around the API/Server used (boo-hoo, but it makes it harder to change servers later on...)
 - Need to include all dependencies!
 - One needs a proxy in order to group multiple applications behind one server
 - The entire application server is very sensible to errors (one single exception might take it down)
 - Deploying hotfixes to security exploits is harder :(
+
 
 ~
 [Spring Docs - Convention over Configuration](https://docs.spring.io/spring-framework/docs/3.0.0.M3/reference/html/ch16s10.html)
@@ -206,6 +226,7 @@ Examples of some annotations
 - @Configuration ***indicates that a class declares one or more @Bean methods and may be processed by the Spring container to generate bean definitions and service requests for those beans at runtime.***
 
 ~
+
 **@SpringBootApplication** combines three Spring annotations (providing the functionality of them all)
 - @Configuration
 - @ComponentScan
